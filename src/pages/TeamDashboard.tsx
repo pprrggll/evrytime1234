@@ -40,7 +40,7 @@ export default function TeamDashboard({ teamId, user, onBack }: TeamDashboardPro
         const parsed = JSON.parse(messages);
         const lastRead = localStorage.getItem(`lastRead_${teamId}_${user.id}`);
         if (lastRead) {
-          const unread = parsed.filter((m: any) => 
+          const unread = parsed.filter((m: any) =>
             new Date(m.timestamp) > new Date(lastRead) && m.userId !== user.id
           ).length;
           setUnreadMessages(unread);
@@ -108,11 +108,10 @@ export default function TeamDashboard({ teamId, user, onBack }: TeamDashboardPro
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative flex items-center gap-2 px-6 py-4 border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id
+                  className={`relative flex items-center gap-2 px-6 py-4 border-b-2 transition-colors whitespace-nowrap ${activeTab === tab.id
                       ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-gray-600 hover:text-gray-900'
-                  }`}
+                    }`}
                 >
                   <Icon className="size-5" />
                   {tab.label}

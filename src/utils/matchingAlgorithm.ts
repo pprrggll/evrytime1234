@@ -39,10 +39,10 @@ export interface MatchScore {
 // Jaccard similarity for sets
 function jaccardSimilarity(set1: string[], set2: string[]): number {
   if (set1.length === 0 && set2.length === 0) return 0;
-  
+
   const intersection = set1.filter(item => set2.includes(item)).length;
   const union = new Set([...set1, ...set2]).size;
-  
+
   return union === 0 ? 0 : intersection / union;
 }
 
@@ -97,17 +97,17 @@ export function recommendCandidates(
         targetProfile.timePref,
         candidate.timePref
       );
-      
+
       const skillOverlap = jaccardSimilarity(
         targetProfile.skills,
         candidate.skills
       );
-      
+
       const interestSimilarity = jaccardSimilarity(
         targetProfile.interests,
         candidate.interests
       );
-      
+
       const personalityCompat = cosineSimilarity(
         targetProfile.personality,
         candidate.personality

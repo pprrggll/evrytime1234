@@ -88,7 +88,7 @@ export default function ProfileSetup({ user, onComplete }: ProfileSetupProps) {
             <span className="text-sm text-gray-600">{step}/4</span>
           </div>
           <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div 
+            <div
               className="h-full bg-blue-600 transition-all duration-300"
               style={{ width: `${(step / 4) * 100}%` }}
             />
@@ -159,11 +159,10 @@ export default function ProfileSetup({ user, onComplete }: ProfileSetupProps) {
                       key={skill}
                       onClick={() => toggleSkill(skill)}
                       disabled={!profile.skills.includes(skill) && profile.skills.length >= 5}
-                      className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                        profile.skills.includes(skill)
+                      className={`px-4 py-2 rounded-full text-sm transition-colors ${profile.skills.includes(skill)
                           ? 'bg-blue-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50'
-                      }`}
+                        }`}
                     >
                       {skill}
                     </button>
@@ -179,11 +178,10 @@ export default function ProfileSetup({ user, onComplete }: ProfileSetupProps) {
                       key={interest}
                       onClick={() => toggleInterest(interest)}
                       disabled={!profile.interests.includes(interest) && profile.interests.length >= 5}
-                      className={`px-4 py-2 rounded-full text-sm transition-colors ${
-                        profile.interests.includes(interest)
+                      className={`px-4 py-2 rounded-full text-sm transition-colors ${profile.interests.includes(interest)
                           ? 'bg-green-600 text-white'
                           : 'bg-gray-100 text-gray-700 hover:bg-gray-200 disabled:opacity-50'
-                      }`}
+                        }`}
                     >
                       {interest}
                     </button>
@@ -213,11 +211,10 @@ export default function ProfileSetup({ user, onComplete }: ProfileSetupProps) {
                     <button
                       key={time.key}
                       onClick={() => toggleTime(time.key)}
-                      className={`p-4 rounded-lg border-2 transition-all ${
-                        profile.timePref[time.key]
+                      className={`p-4 rounded-lg border-2 transition-all ${profile.timePref[time.key]
                           ? 'border-blue-600 bg-blue-50'
                           : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       <div className="text-2xl mb-1">{time.icon}</div>
                       <div className="text-sm">{time.label}</div>
@@ -233,11 +230,10 @@ export default function ProfileSetup({ user, onComplete }: ProfileSetupProps) {
                     <button
                       key={role}
                       onClick={() => setProfile({ ...profile, rolePref: role })}
-                      className={`p-3 rounded-lg border-2 transition-all ${
-                        profile.rolePref === role
+                      className={`p-3 rounded-lg border-2 transition-all ${profile.rolePref === role
                           ? 'border-blue-600 bg-blue-50 text-blue-600'
                           : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                        }`}
                     >
                       {role}
                     </button>
@@ -344,7 +340,7 @@ export default function ProfileSetup({ user, onComplete }: ProfileSetupProps) {
                 이전
               </button>
             )}
-            
+
             {step < 4 ? (
               <button
                 onClick={() => setStep(step + 1)}

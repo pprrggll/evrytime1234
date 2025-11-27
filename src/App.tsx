@@ -86,9 +86,8 @@ export default function App() {
 
               <button
                 onClick={() => setCurrentPage("matching")}
-                className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${
-                  currentPage === "matching" ? "bg-indigo-50 text-indigo-600" : "text-gray-700 hover:bg-gray-200"
-                }`}
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${currentPage === "matching" ? "bg-indigo-50 text-indigo-600" : "text-gray-700 hover:bg-gray-200"
+                  }`}
               >
                 <Users className="size-4 flex-shrink-0" />
                 <span>팀원 매칭</span>
@@ -97,11 +96,10 @@ export default function App() {
               {currentTeam && (
                 <button
                   onClick={() => setCurrentPage("team-dashboard")}
-                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${
-                    currentPage === "team-dashboard"
+                  className={`w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm transition-colors ${currentPage === "team-dashboard"
                       ? "bg-indigo-50 text-indigo-600"
                       : "text-gray-700 hover:bg-gray-200"
-                  }`}
+                    }`}
                 >
                   <CheckSquare className="size-4 flex-shrink-0" />
                   <span>팀 작업공간</span>

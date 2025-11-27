@@ -157,4 +157,23 @@ export interface Team {
   createdAt: string;
 }
 
-export const mockTeams: Team[] = [];
+export const mockTeams: Team[] = [
+  {
+    id: 'team1',
+    name: '나침반',
+    courseId: 'BUS301',
+    courseName: '벤처경영론',
+    ownerId: 'user123',
+    members: ['user123', 'user1', 'user2'],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'team2',
+    name: '웹 프로그래밍 프로젝트',
+    courseId: 'CS302',
+    courseName: '웹 프로그래밍',
+    ownerId: 'user3',
+    members: ['user3', 'user4'],
+    createdAt: new Date().toISOString()
+  }
+];

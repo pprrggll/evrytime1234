@@ -24,7 +24,14 @@ export default function MatchingDashboard({ user, onCreateTeam, onTeamSelect }: 
     setRecommendations(recs);
 
     // Load user's teams
-    const savedTeams = localStorage.getItem('teams');
+    let savedTeams = localStorage.getItem('teams');
+
+    // Initialize with mock teams if empty
+    if (!savedTeams) {
+      localStorage.setItem('teams', JSON.stringify(mockTeams));
+      savedTeams = JSON.stringify(mockTeams);
+    }
+
     if (savedTeams) {
       const teams: Team[] = JSON.parse(savedTeams);
       const userTeams = teams.filter(t => t.members.includes(user.id));
@@ -134,8 +141,8 @@ export default function MatchingDashboard({ user, onCreateTeam, onTeamSelect }: 
             <button
               onClick={() => setShowFilters(!showFilters)}
               className={`flex items-center gap-2 px-4 py-2 border rounded-lg text-sm transition-colors ${showFilters
-                  ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                  : 'border-gray-300 hover:bg-gray-50 text-gray-700'
+                ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                : 'border-gray-300 hover:bg-gray-50 text-gray-700'
                 }`}
             >
               <Filter className="size-4" />
@@ -162,8 +169,8 @@ export default function MatchingDashboard({ user, onCreateTeam, onTeamSelect }: 
                     key={role}
                     onClick={() => setFilterRole(role)}
                     className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${filterRole === role
-                        ? 'bg-indigo-600 text-white'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      ? 'bg-indigo-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
                     {role}

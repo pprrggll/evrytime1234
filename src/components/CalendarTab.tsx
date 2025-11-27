@@ -64,17 +64,17 @@ export default function CalendarTab({ teamId, user }: CalendarTabProps) {
     const startingDayOfWeek = firstDay.getDay();
 
     const days: (Date | null)[] = [];
-    
+
     // Add empty cells for days before the first day of the month
     for (let i = 0; i < startingDayOfWeek; i++) {
       days.push(null);
     }
-    
+
     // Add all days of the month
     for (let day = 1; day <= daysInMonth; day++) {
       days.push(new Date(year, month, day));
     }
-    
+
     return days;
   };
 
@@ -135,9 +135,8 @@ export default function CalendarTab({ teamId, user }: CalendarTabProps) {
             {['일', '월', '화', '수', '목', '금', '토'].map((day, i) => (
               <div
                 key={day}
-                className={`py-2 text-center text-sm ${
-                  i === 0 ? 'text-red-600' : i === 6 ? 'text-blue-600' : 'text-gray-700'
-                }`}
+                className={`py-2 text-center text-sm ${i === 0 ? 'text-red-600' : i === 6 ? 'text-blue-600' : 'text-gray-700'
+                  }`}
               >
                 {day}
               </div>
@@ -159,13 +158,11 @@ export default function CalendarTab({ teamId, user }: CalendarTabProps) {
                 <button
                   key={day.toISOString()}
                   onClick={() => setSelectedDate(day)}
-                  className={`aspect-square p-2 border-b border-r border-gray-200 hover:bg-gray-50 transition-colors ${
-                    isToday ? 'bg-blue-50' : ''
-                  } ${isSelected ? 'ring-2 ring-blue-500 ring-inset' : ''}`}
+                  className={`aspect-square p-2 border-b border-r border-gray-200 hover:bg-gray-50 transition-colors ${isToday ? 'bg-blue-50' : ''
+                    } ${isSelected ? 'ring-2 ring-blue-500 ring-inset' : ''}`}
                 >
-                  <div className={`text-sm mb-1 ${
-                    isToday ? 'inline-flex items-center justify-center size-6 bg-blue-600 text-white rounded-full' : 'text-gray-900'
-                  }`}>
+                  <div className={`text-sm mb-1 ${isToday ? 'inline-flex items-center justify-center size-6 bg-blue-600 text-white rounded-full' : 'text-gray-900'
+                    }`}>
                     {day.getDate()}
                   </div>
                   {dayEvents.length > 0 && (

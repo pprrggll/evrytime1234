@@ -145,9 +145,9 @@ export default function MessengerTab({ teamId, user }: MessengerTabProps) {
     if (minutes < 60) return `${minutes}분 전`;
     if (hours < 24) return `${hours}시간 전`;
     if (days < 7) return `${days}일 전`;
-    
-    return date.toLocaleDateString('ko-KR', { 
-      month: 'short', 
+
+    return date.toLocaleDateString('ko-KR', {
+      month: 'short',
       day: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
@@ -156,28 +156,28 @@ export default function MessengerTab({ teamId, user }: MessengerTabProps) {
 
   const groupMessagesByDate = (messages: Message[]) => {
     const groups: { [key: string]: Message[] } = {};
-    
+
     messages.forEach(msg => {
       const date = new Date(msg.timestamp).toLocaleDateString('ko-KR', {
         year: 'numeric',
         month: 'long',
         day: 'numeric'
       });
-      
+
       if (!groups[date]) {
         groups[date] = [];
       }
       groups[date].push(msg);
     });
-    
+
     return groups;
   };
 
   const filteredMessages = searchTerm
-    ? messages.filter(m => 
-        m.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        m.userName.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+    ? messages.filter(m =>
+      m.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      m.userName.toLowerCase().includes(searchTerm.toLowerCase())
+    )
     : messages;
 
   const messageGroups = groupMessagesByDate(filteredMessages);
@@ -266,11 +266,10 @@ export default function MessengerTab({ teamId, user }: MessengerTabProps) {
                           <span className="text-xs text-gray-500">{formatTime(message.timestamp)}</span>
                         )}
                         <div
-                          className={`max-w-md px-4 py-2 rounded-2xl ${
-                            isOwn
+                          className={`max-w-md px-4 py-2 rounded-2xl ${isOwn
                               ? 'bg-blue-600 text-white'
                               : 'bg-gray-100 text-gray-900'
-                          }`}
+                            }`}
                         >
                           {message.content}
                         </div>
@@ -298,7 +297,7 @@ export default function MessengerTab({ teamId, user }: MessengerTabProps) {
           >
             <Smile className="size-5 text-gray-600" />
           </button>
-          
+
           <button
             type="button"
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors"

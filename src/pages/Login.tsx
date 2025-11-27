@@ -68,8 +68,8 @@ export default function Login({ onLogin }: LoginProps) {
             <button
               onClick={() => setIsSignup(false)}
               className={`flex-1 py-2 rounded-md text-sm font-medium transition-all ${!isSignup
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-gray-900 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               로그인
@@ -77,8 +77,8 @@ export default function Login({ onLogin }: LoginProps) {
             <button
               onClick={() => setIsSignup(true)}
               className={`flex-1 py-2 rounded-md text-sm font-medium transition-all ${isSignup
-                  ? 'bg-white text-gray-900 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-gray-900 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
                 }`}
             >
               회원가입

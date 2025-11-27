@@ -104,7 +104,7 @@ export default function TaskKanban({ teamId, user }: TaskKanbanProps) {
       <div className="grid md:grid-cols-3 gap-6">
         {COLUMNS.map(column => {
           const columnTasks = tasks.filter(task => task.status === column.id);
-          
+
           return (
             <div key={column.id} className="flex flex-col">
               <div className={`${column.color} rounded-lg p-3 mb-4`}>

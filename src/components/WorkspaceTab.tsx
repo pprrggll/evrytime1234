@@ -68,14 +68,14 @@ export default function WorkspaceTab({ teamId, user }: WorkspaceTabProps) {
     const updated = documents.map(doc =>
       doc.id === selectedDoc.id
         ? {
-            ...doc,
-            title: editTitle,
-            content: editContent,
-            updatedBy: user.id,
-            updatedByName: user.name,
-            updatedAt: new Date().toISOString(),
-            version: doc.version + 1
-          }
+          ...doc,
+          title: editTitle,
+          content: editContent,
+          updatedBy: user.id,
+          updatedByName: user.name,
+          updatedAt: new Date().toISOString(),
+          version: doc.version + 1
+        }
         : doc
     );
     saveDocs(updated);
@@ -126,11 +126,10 @@ export default function WorkspaceTab({ teamId, user }: WorkspaceTabProps) {
                   setSelectedDoc(doc);
                   setIsEditing(false);
                 }}
-                className={`w-full p-3 rounded-lg text-left transition-colors ${
-                  selectedDoc?.id === doc.id
+                className={`w-full p-3 rounded-lg text-left transition-colors ${selectedDoc?.id === doc.id
                     ? 'bg-blue-50 border-2 border-blue-200'
                     : 'bg-gray-50 hover:bg-gray-100 border-2 border-transparent'
-                }`}
+                  }`}
               >
                 <div className="flex items-start gap-2">
                   <FileText className="size-4 text-gray-400 mt-0.5 flex-shrink-0" />
@@ -247,7 +246,7 @@ export default function WorkspaceTab({ teamId, user }: WorkspaceTabProps) {
 
 [링크](https://example.com)"
                 />
-                
+
                 {/* Editing Tips */}
                 <div className="mt-4 p-3 bg-blue-50 rounded-lg">
                   <div className="text-xs text-blue-900">
@@ -281,7 +280,7 @@ export default function WorkspaceTab({ teamId, user }: WorkspaceTabProps) {
               >
                 새 문서 만들기
               </button>
-              
+
               <div className="mt-8 p-4 bg-blue-50 rounded-lg max-w-md mx-auto">
                 <h4 className="text-sm text-blue-900 mb-2">✨ 협업 기능</h4>
                 <ul className="text-xs text-blue-800 text-left space-y-1">

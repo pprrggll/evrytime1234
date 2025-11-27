@@ -129,7 +129,7 @@ export default function Home({ onNavigate }: HomeProps) {
                   <div className="size-16 bg-gray-200 rounded-full flex items-center justify-center mb-2">
                     <User className="size-8 text-gray-400" />
                   </div>
-                  <div className="font-medium text-gray-900 text-sm mb-1">세종대</div>
+                  <div className="font-medium text-gray-900 text-sm mb-1">김세종</div>
                   <div className="text-xs text-gray-500">세종대학교</div>
                 </div>
                 <div className="flex gap-2 mt-3">

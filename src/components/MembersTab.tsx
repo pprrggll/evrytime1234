@@ -35,7 +35,7 @@ export default function MembersTab({ team, currentUser }: MembersTabProps) {
       <div className="grid md:grid-cols-2 gap-4">
         {members.map(member => {
           const isMemberOwner = team.ownerId === member.id;
-          
+
           return (
             <div
               key={member.id}

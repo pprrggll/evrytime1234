@@ -135,11 +135,10 @@ export default function FilesTab({ teamId, user }: FilesTabProps) {
             <button
               key={type.id}
               onClick={() => setFilterType(type.id)}
-              className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-                filterType === type.id
+              className={`px-4 py-2 rounded-lg text-sm transition-colors ${filterType === type.id
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+                }`}
             >
               {type.label}
             </button>

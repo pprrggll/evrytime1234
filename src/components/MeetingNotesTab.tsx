@@ -82,7 +82,7 @@ export default function MeetingNotesTab({ teamId, user }: MeetingNotesTabProps) 
 
   const createMeeting = async (meeting: Omit<MeetingNote, 'id' | 'summary' | 'actionItems' | 'createdAt'>) => {
     setIsGeneratingSummary(true);
-    
+
     const { summary, actionItems } = await generateAISummary(meeting.content);
 
     const newMeeting: MeetingNote = {
@@ -176,11 +176,10 @@ ${meeting.actionItems.map(item => `- [${item.completed ? 'x' : ' '}] ${item.task
               <button
                 key={meeting.id}
                 onClick={() => setSelectedMeeting(meeting)}
-                className={`w-full p-4 rounded-lg text-left transition-colors ${
-                  selectedMeeting?.id === meeting.id
+                className={`w-full p-4 rounded-lg text-left transition-colors ${selectedMeeting?.id === meeting.id
                     ? 'bg-blue-50 border-2 border-blue-200'
                     : 'bg-gray-50 hover:bg-gray-100 border-2 border-transparent'
-                }`}
+                  }`}
               >
                 <div className="flex items-start gap-2 mb-2">
                   <FileText className="size-4 text-gray-400 mt-0.5 flex-shrink-0" />

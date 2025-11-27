@@ -37,8 +37,8 @@ export default function RecommendCard({ recommendation, currentUser, onInvite }:
           </div>
 
           <div className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium flex-shrink-0 ${isHighMatch
-              ? 'bg-green-50 text-green-700'
-              : 'bg-indigo-50 text-indigo-700'
+            ? 'bg-green-50 text-green-700'
+            : 'bg-indigo-50 text-indigo-700'
             }`}>
             {isHighMatch && <Award className="size-3" />}
             <Star className="size-3 fill-current" />
@@ -160,8 +160,8 @@ export default function RecommendCard({ recommendation, currentUser, onInvite }:
                       <span
                         key={skill}
                         className={`px-3 py-1.5 rounded-md text-xs font-medium ${isCommon
-                            ? 'bg-indigo-600 text-white'
-                            : 'bg-gray-100 text-gray-700'
+                          ? 'bg-indigo-600 text-white'
+                          : 'bg-gray-100 text-gray-700'
                           }`}
                       >
                         {skill}
@@ -182,8 +182,8 @@ export default function RecommendCard({ recommendation, currentUser, onInvite }:
                       <span
                         key={interest}
                         className={`px-3 py-1.5 rounded-md text-xs font-medium ${isCommon
-                            ? 'bg-green-600 text-white'
-                            : 'bg-gray-100 text-gray-700'
+                          ? 'bg-green-600 text-white'
+                          : 'bg-gray-100 text-gray-700'
                           }`}
                       >
                         {interest}
@@ -207,8 +207,8 @@ export default function RecommendCard({ recommendation, currentUser, onInvite }:
                     <div
                       key={time.key}
                       className={`p-3 rounded-lg border text-sm ${candidate.timePref[time.key]
-                          ? 'border-indigo-200 bg-indigo-50 text-indigo-900'
-                          : 'border-gray-200 bg-gray-50 text-gray-600'
+                        ? 'border-indigo-200 bg-indigo-50 text-indigo-900'
+                        : 'border-gray-200 bg-gray-50 text-gray-600'
                         }`}
                     >
                       <span className="mr-2">{time.icon}</span>
